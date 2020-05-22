@@ -44,49 +44,19 @@ footer {
     z-index: 3;
 }
 
-@media (max-height: 750px) {
-    /* For Mobile Screen*/
-    .nav-collapse {
-        overflow-y: auto;
-    }
-    #top-banner-jumbo {
-        height: auto;
-        background-image: none !important;
-        
-    }
-    .bg-text {
-        background-color: rgb(0,0,0); background-color: rgba(0,0,0,0.7); 
-        color: white;
-        border: 2px solid #fff;
-        font-weight: bold;
-        width: 80%;
-        max-width: 80%;
-        padding: 25px;
-        text-align: center;
-        top: 50%;
-        left: 50%;
-        width: 100%;
-        max-width: 100%;
-    }
-
-}
-
-@media (min-height: 750px) {
-    /* For Normal Screen*/
-    .bg-text {
-        background-color: rgb(0,0,0); background-color: rgba(0,0,0,0.7); 
-        color: white;
-        border: 2px solid #fff;
-        font-weight: bold;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 2;
-        width: 80%;
-        max-width: 80%;
-        padding: 25px;
-        text-align: center;
-    }
-
+/* For Normal Screen*/
+.bg-text {
+    background-color: rgb(0,0,0); background-color: rgba(0,0,0,0.7); 
+    color: white;
+    border: 2px solid #fff;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 80%;
+    max-width: 80%;
+    padding: 25px;
+    text-align: center;
 }
