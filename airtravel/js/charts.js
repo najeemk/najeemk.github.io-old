@@ -22,6 +22,16 @@ function fix_charts() {
     }
 }
 
+function get_vals(x, c) {
+    /* Given a 2-d array x and index c, function will extract [:][c] */ 
+    let data = []
+    for (y of x) {
+        data.push(y[c])
+    }
+    return data
+}
+
+
 /* Begin charts*/
 
 systems_chart = Highcharts.getJSON(
@@ -103,14 +113,6 @@ systems_chart = Highcharts.getJSON(
     }
 );
 
-function get_vals(x, c) {
-    /* Given a 2-d array x and index c, function will extract [:][c] */ 
-    let data = []
-    for (y of x) {
-        data.push(y[c])
-    }
-    return data
-}
 
 diffs_chart = Highcharts.getJSON(
     'data/diffs_systems.json',
@@ -233,25 +235,40 @@ world_continents = Highcharts.getJSON(
         Highcharts.chart('world-continents', {
 
             chart: {
-                polar: true
+                polar: true,
+                type: 'line'
             },
         
             title: {
-                text: 'Highcharts Polar Chart'
+                text: 'Monthly U.S. Outbound Tourism, 2018',
             },
-        
             subtitle: {
-                text: 'Also known as Radar Chart'
+                text: 'It seems to be fairly uniform, with the summmer months (Jul-Sept) only beating the winter months (Jan-Mar) by ~6.7%'
+            },
+            caption: {
+                text: 'Source: <a href="https://travel.trade.gov/view/m-2018-O-001/index.html">U.S. ITA National Travel and Tourism Office</a>'
             },
         
             xAxis: {
-                categories: get_vals(data, 0)
+                categories: get_vals(data, 0),
+                tickmarkPlacement: 'on',
+                labels: {
+                    format: '{value}'
+                }
             },
-        
+            
+            pane: {
+                size: '90%'
+            },
+            
             yAxis: {
-                min: 0,
+                lineWidth: 0,
+                tickPositions: [3, 6, 9, 12, 15]
             },
-        
+
+            tooltip: {
+                pointFormat: '<b>{point.y}%</b>'
+            },
             plotOptions: {
                 column: {
                     pointPadding: 0,
@@ -260,9 +277,131 @@ world_continents = Highcharts.getJSON(
             },
         
             series: [{
-                type: 'area',
                 name: 'Area',
                 data: get_vals(data,1)
+            }]
+        });
+    }
+);
+
+timeline_d = Highcharts.getJSON(
+    'data/null.json',
+    function (data) {
+        Highcharts.chart('timeline-data', {
+            chart: {
+                zoomType: 'x',
+                type: 'timeline'
+            },
+            xAxis: {
+                type: 'datetime',
+                visible: true,
+                plotLines: [{
+                    color: '#236e96', // Color value
+                    dashStyle: 'longdashdot', // Style of the plot line. Default to solid
+                    value: Date.UTC(2019, 0, 1), // Value of where the line will appear
+                    width: 2 // Width of the line    
+                  },
+                  {
+                    color: '#ff598f', // Color value
+                    dashStyle: 'longdashdot', // Style of the plot line. Default to solid
+                    value: Date.UTC(2019, 3, 1), // Value of where the line will appear
+                    width: 2 // Width of the line    
+                  },
+                  {
+                    color: '#ffd700', // Color value
+                    dashStyle: 'longdashdot', // Style of the plot line. Default to solid
+                    value: Date.UTC(2019, 6, 1), // Value of where the line will appear
+                    width: 2 // Width of the line    
+                  },
+                  {
+                    color: '#f3872f', // Color value
+                    dashStyle: 'longdashdot', // Style of the plot line. Default to solid
+                    value: Date.UTC(2019, 9, 1), // Value of where the line will appear
+                    width: 2 // Width of the line    
+                  }]
+            },
+            yAxis: {
+                gridLineWidth: 1,
+                title: null,
+                labels: {
+                    enabled: false
+                }
+            },
+            legend: {
+                enabled: false
+            },
+            title: {
+                text: 'Timeline of Space Exploration'
+            },
+            subtitle: {
+                text: 'Info source: <a href="https://en.wikipedia.org/wiki/Timeline_of_space_exploration">www.wikipedia.org</a>'
+            },
+            tooltip: {
+                style: {
+                    width: 300
+                }
+            },
+            series: [{
+                dataLabels: {
+                    allowOverlap: true,
+                    format: '<span style="color:{point.color}">● </span><span style="font-weight: bold;" > ' +
+                        '{point.x:%d %b %Y}</span><br/>{point.label}'
+                },
+                marker: {
+                    symbol: 'circle'
+                },
+                data: [{
+                    x: Date.UTC(2019, 0, 1),
+                    dataLabels: {
+                        enabled: false
+                    }
+                },{
+                    x: Date.UTC(2019, 1, 5),
+                    name: 'Lunar New Year',
+                    label: 'Lunar New Year',
+                },{
+                    x: Date.UTC(2019, 1, 14),
+                    name: 'Valentines Day',
+                    label: 'Valentines Day',
+                },{
+                    x: Date.UTC(2019, 2, 23),
+                    name: 'Spring Break (UC)',
+                    label: 'Spring Break (UC)',
+                },{
+                    x: Date.UTC(2019, 3, 21),
+                    name: 'Easter',
+                    label: 'Easter',
+                },{
+                    x: Date.UTC(2019, 4, 27),
+                    name: 'Memorial Day',
+                    label: 'Memorial Day',
+                },{
+                    x: Date.UTC(2019, 5, 14),
+                    name: 'Summer Break (UC)',
+                    label: 'Summer Break (UC)',
+                },{
+                    x: Date.UTC(2019, 6, 4),
+                    name: 'Independence Day',
+                    label: 'Independence Day',
+                },{
+                    x: Date.UTC(2019, 8, 2),
+                    name: 'Labor Day',
+                    label: 'Labor Day',
+                },{
+                    x: Date.UTC(2019, 9, 31),
+                    name: 'Halloween',
+                    label: 'Halloween',
+                },{
+                    x: Date.UTC(2019, 10, 28),
+                    name: 'Thanksgiving',
+                    label: 'Thanksgiving',
+                },
+                {
+                    x: Date.UTC(2019, 11, 25),
+                    name: 'Christmas',
+                    label: 'Christmas',
+                }
+            ]
             }]
         });
     }
@@ -274,5 +413,8 @@ Reveal.addEventListener( 'somestate', function() {
         diffs_chart.reflow();
         quarter_by_quarter_chart.reflow(); 
         world_continents.reflow();
+        timeline_d.reflow();
     });
 }, false );
+
+timeline_d.reflow();
