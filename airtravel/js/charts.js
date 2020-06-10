@@ -227,9 +227,44 @@ quarter_by_quarter_chart = Highcharts.getJSON(
 );
 
 world_continents = Highcharts.getJSON(
-    'data/.json',
+    'data/twenty_eighteen.json',
     function (data) {
+        console.log(get_vals(data, 0))
+        Highcharts.chart('world-continents', {
+
+            chart: {
+                polar: true
+            },
         
+            title: {
+                text: 'Highcharts Polar Chart'
+            },
+        
+            subtitle: {
+                text: 'Also known as Radar Chart'
+            },
+        
+            xAxis: {
+                categories: get_vals(data, 0)
+            },
+        
+            yAxis: {
+                min: 0,
+            },
+        
+            plotOptions: {
+                column: {
+                    pointPadding: 0,
+                    groupPadding: 0
+                }
+            },
+        
+            series: [{
+                type: 'area',
+                name: 'Area',
+                data: get_vals(data,1)
+            }]
+        });
     }
 );
 
