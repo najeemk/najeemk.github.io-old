@@ -42,6 +42,9 @@ systems_chart = Highcharts.getJSON(
             chart: {
                 zoomType: 'x'
             },
+            credits: {
+                enabled: false
+            },
             title: {
                 text: 'US System Aircraft Passenger Enplanements (January 2000 - January 2020)'
             },
@@ -195,7 +198,10 @@ quarter_by_quarter_chart = Highcharts.getJSON(
                 text: 'Quatertly U.S. Outbound Tourism, 2018'
             },
             subtitle: {
-                text: 'It seems to be fairly uniform, with the summmer months (Jul-Sept) only beating the winter months (Jan-Mar) by ~6.7%'
+                text: 'Unsupringly, the summmer months (Jul-Sept) were the most popular, beating the winter months (Jan-Mar) by around 7%<br />Suprisingly though, the gap between the seasons is much smaller than I originally anticipated.'
+            },
+            credits: {
+                enabled: false
             },
             tooltip: {
                 pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -215,9 +221,9 @@ quarter_by_quarter_chart = Highcharts.getJSON(
                     },
                 }
             },
-            colors: ['#236e96', '#ff598f', '#ffd700', '#f3872f'],
+            colors: ['#236e96', '#ffd700','rgba(87, 243, 48, 1)', '#f3872f'],
             series: [{
-                name: 'Fiscal Quarter',
+                name: 'Percentage of Total Outboard Tourists',
                 colorByPoint: true,
                 data: data
             }],
@@ -237,6 +243,9 @@ world_continents = Highcharts.getJSON(
             chart: {
                 polar: true,
                 type: 'line'
+            },
+            credits: {
+                enabled: false
             },
         
             title: {
@@ -292,31 +301,34 @@ timeline_d = Highcharts.getJSON(
                 zoomType: 'x',
                 type: 'timeline'
             },
+            credits: {
+                enabled: false
+            },
             xAxis: {
                 type: 'datetime',
                 visible: true,
-                plotLines: [{
-                    color: '#236e96', // Color value
-                    dashStyle: 'longdashdot', // Style of the plot line. Default to solid
-                    value: Date.UTC(2019, 0, 1), // Value of where the line will appear
+                plotBands: [{
+                    color: 'rgba(35, 109, 149, 0.7)', // Color value
+                    from: Date.UTC(2019, 0, 1), // Value of where the line will appear
+                    to: Date.UTC(2019, 3, 1), // Value of where the line will appear
+                    width: 2, // Width of the line,
+                  },
+                  {
+                    color: 'rgba(255, 217, 0, 0.7)', // Color value
+                    from: Date.UTC(2019, 3, 1), // Value of where the line will appear
+                    to: Date.UTC(2019, 6, 1),
                     width: 2 // Width of the line    
                   },
                   {
-                    color: '#ff598f', // Color value
-                    dashStyle: 'longdashdot', // Style of the plot line. Default to solid
-                    value: Date.UTC(2019, 3, 1), // Value of where the line will appear
+                    color: 'rgba(87, 243, 48, 0.7)', // Color value
+                    from: Date.UTC(2019, 6, 1), // Value of where the line will appear
+                    to: Date.UTC(2019, 9, 1),
                     width: 2 // Width of the line    
                   },
                   {
-                    color: '#ffd700', // Color value
-                    dashStyle: 'longdashdot', // Style of the plot line. Default to solid
-                    value: Date.UTC(2019, 6, 1), // Value of where the line will appear
-                    width: 2 // Width of the line    
-                  },
-                  {
-                    color: '#f3872f', // Color value
-                    dashStyle: 'longdashdot', // Style of the plot line. Default to solid
-                    value: Date.UTC(2019, 9, 1), // Value of where the line will appear
+                    color: 'rgba(243, 136, 48, 0.7)', // Color value
+                    from: Date.UTC(2019, 9, 1), // Value of where the line will appear
+                    to: Date.UTC(2019, 11, 31),
                     width: 2 // Width of the line    
                   }]
             },
@@ -331,15 +343,18 @@ timeline_d = Highcharts.getJSON(
                 enabled: false
             },
             title: {
-                text: 'Timeline of Space Exploration'
+                text: 'Major Holidays and Breaks That Occur During the Given Quarters'
             },
             subtitle: {
-                text: 'Info source: <a href="https://en.wikipedia.org/wiki/Timeline_of_space_exploration">www.wikipedia.org</a>'
+                text: 'Color coding coincides with previous chart'
             },
             tooltip: {
                 style: {
                     width: 300
                 }
+            },
+            caption: {
+                text: 'Note: Spring Break and Summer Break start dates based upon the University of California (UC) system calendar'
             },
             series: [{
                 dataLabels: {
@@ -352,6 +367,8 @@ timeline_d = Highcharts.getJSON(
                 },
                 data: [{
                     x: Date.UTC(2019, 0, 1),
+                    name: 'New Year',
+                    label: 'New Year',
                     dataLabels: {
                         enabled: false
                     }
@@ -400,6 +417,14 @@ timeline_d = Highcharts.getJSON(
                     x: Date.UTC(2019, 11, 25),
                     name: 'Christmas',
                     label: 'Christmas',
+                },
+                {
+                    x: Date.UTC(2019, 11, 31),
+                    name: 'New Years Eve',
+                    label: 'New Years Eve',
+                    dataLabels: {
+                        enabled: false
+                    }
                 }
             ]
             }]

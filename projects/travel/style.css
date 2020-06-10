@@ -12,3 +12,6 @@ img {
     width: 100%;
     min-height: 400px;
 }
+td, tr {
+    font-size: xx-large;
+}
