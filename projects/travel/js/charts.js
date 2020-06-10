@@ -120,7 +120,7 @@ systems_chart = Highcharts.getJSON(
 diffs_chart = Highcharts.getJSON(
     'data/diffs_systems.json',
     function (data) {
-        console.log(get_vals(data, 0));
+
         Highcharts.chart('systems-diff', {
             title: {
                 text: 'Differences in Aircraft Passenger Emplanement by Year (2000 -  2019)'
@@ -237,7 +237,7 @@ quarter_by_quarter_chart = Highcharts.getJSON(
 world_continents = Highcharts.getJSON(
     'data/twenty_eighteen.json',
     function (data) {
-        console.log(get_vals(data, 0))
+
         Highcharts.chart('world-continents', {
 
             chart: {
