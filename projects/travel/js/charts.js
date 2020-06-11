@@ -32,15 +32,39 @@ function get_vals(x, c) {
 }
 
 
-/* Begin charts*/
-
 systems_chart = Highcharts.getJSON(
     'data/carrier_traffic_clean.json',
     function (data) {
-
-        Highcharts.chart('systems-enplanement', {
+        console.log()
+        systems_chart_2 = Highcharts.chart('systems-enplanement', {
             chart: {
-                zoomType: 'x'
+                zoomType: 'xy',
+                events: {
+                    selection: function (event) {
+                        if (event.xAxis) {
+                            console.log('zoom')
+                            systems_chart_2.removeAnnotation('anno')
+                        } else {
+                            console.log('unzoom')
+                            systems_chart_2.addAnnotation({
+                                id: 'anno',
+                                labelOptions: {
+                                    verticalAlign: 'top',
+                                    y: 20,
+                                    backgroundColor: 'rgba(255,255,255,0.5)',
+                                },
+                                labels: [{
+                                    point:{x: 351, y: 121},
+                                    text: '2008 Stock Market Crash'
+                                },{
+                                    point:{x: 74, y: 181},
+                                    text: '9/11 Terrorist Attacks'
+                                },]
+                            }
+                            )
+                        }
+                    }
+                },
             },
             credits: {
                 enabled: false
@@ -75,6 +99,22 @@ systems_chart = Highcharts.getJSON(
             legend: {
                 enabled: false
             },
+            annotations: [{
+                id: 'anno',
+                labelOptions: {
+                    verticalAlign: 'top',
+                    y: 20,
+                    backgroundColor: 'rgba(255,255,255,0.5)',
+                },
+                labels: [{
+                    point:{x: 351, y: 121},
+                    text: '2008 Stock Market Crash'
+                },{
+                    point:{x: 74, y: 181},
+                    text: '9/11 Terrorist Attacks'
+                },]
+            }
+            ],
             plotOptions: {
                 area: {
                     fillColor: {
@@ -234,64 +274,6 @@ quarter_by_quarter_chart = Highcharts.getJSON(
     }
 );
 
-world_continents = Highcharts.getJSON(
-    'data/twenty_eighteen.json',
-    function (data) {
-
-        Highcharts.chart('world-continents', {
-
-            chart: {
-                polar: true,
-                type: 'line'
-            },
-            credits: {
-                enabled: false
-            },
-        
-            title: {
-                text: 'Monthly U.S. Outbound Tourism, 2018',
-            },
-            subtitle: {
-                text: 'It seems to be fairly uniform, with the summmer months (Jul-Sept) only beating the winter months (Jan-Mar) by ~6.7%'
-            },
-            caption: {
-                text: 'Source: <a href="https://travel.trade.gov/view/m-2018-O-001/index.html">U.S. ITA National Travel and Tourism Office</a>'
-            },
-        
-            xAxis: {
-                categories: get_vals(data, 0),
-                tickmarkPlacement: 'on',
-                labels: {
-                    format: '{value}'
-                }
-            },
-            
-            pane: {
-                size: '90%'
-            },
-            
-            yAxis: {
-                lineWidth: 0,
-                tickPositions: [3, 6, 9, 12, 15]
-            },
-
-            tooltip: {
-                pointFormat: '<b>{point.y}%</b>'
-            },
-            plotOptions: {
-                column: {
-                    pointPadding: 0,
-                    groupPadding: 0
-                }
-            },
-        
-            series: [{
-                name: 'Area',
-                data: get_vals(data,1)
-            }]
-        });
-    }
-);
 
 timeline_d = Highcharts.getJSON(
     'data/null.json',
@@ -309,26 +291,26 @@ timeline_d = Highcharts.getJSON(
                 visible: true,
                 plotBands: [{
                     color: 'rgba(35, 109, 149, 0.7)', // Color value
-                    from: Date.UTC(2019, 0, 1), // Value of where the line will appear
-                    to: Date.UTC(2019, 3, 1), // Value of where the line will appear
+                    from: Date.UTC(2018, 0, 1), // Value of where the line will appear
+                    to: Date.UTC(2018, 3, 1), // Value of where the line will appear
                     width: 2, // Width of the line,
                   },
                   {
                     color: 'rgba(255, 217, 0, 0.7)', // Color value
-                    from: Date.UTC(2019, 3, 1), // Value of where the line will appear
-                    to: Date.UTC(2019, 6, 1),
+                    from: Date.UTC(2018, 3, 1), // Value of where the line will appear
+                    to: Date.UTC(2018, 6, 1),
                     width: 2 // Width of the line    
                   },
                   {
                     color: 'rgba(87, 243, 48, 0.7)', // Color value
-                    from: Date.UTC(2019, 6, 1), // Value of where the line will appear
-                    to: Date.UTC(2019, 9, 1),
+                    from: Date.UTC(2018, 6, 1), // Value of where the line will appear
+                    to: Date.UTC(2018, 9, 1),
                     width: 2 // Width of the line    
                   },
                   {
                     color: 'rgba(243, 136, 48, 0.7)', // Color value
-                    from: Date.UTC(2019, 9, 1), // Value of where the line will appear
-                    to: Date.UTC(2019, 11, 31),
+                    from: Date.UTC(2018, 9, 1), // Value of where the line will appear
+                    to: Date.UTC(2018, 11, 31),
                     width: 2 // Width of the line    
                   }]
             },
@@ -343,7 +325,7 @@ timeline_d = Highcharts.getJSON(
                 enabled: false
             },
             title: {
-                text: 'Major Holidays and Breaks That Occur During the Given Quarters'
+                text: 'Major Holidays and Breaks That Occur During the Given Quarters, 2018'
             },
             subtitle: {
                 text: 'Color coding coincides with previous chart'
@@ -366,60 +348,60 @@ timeline_d = Highcharts.getJSON(
                     symbol: 'circle'
                 },
                 data: [{
-                    x: Date.UTC(2019, 0, 1),
+                    x: Date.UTC(2018, 0, 1),
                     name: 'New Year',
                     label: 'New Year',
                     dataLabels: {
                         enabled: false
                     }
                 },{
-                    x: Date.UTC(2019, 1, 5),
-                    name: 'Lunar New Year',
-                    label: 'Lunar New Year',
+                    x: Date.UTC(2018, 1, 4),
+                    name: 'Super Bowl',
+                    label: 'Super Bowl',
                 },{
-                    x: Date.UTC(2019, 1, 14),
+                    x: Date.UTC(2018, 1, 14),
                     name: 'Valentines Day',
                     label: 'Valentines Day',
                 },{
-                    x: Date.UTC(2019, 2, 23),
+                    x: Date.UTC(2018, 2, 24),
                     name: 'Spring Break (UC)',
                     label: 'Spring Break (UC)',
                 },{
-                    x: Date.UTC(2019, 3, 21),
+                    x: Date.UTC(2018, 3, 1),
                     name: 'Easter',
                     label: 'Easter',
                 },{
-                    x: Date.UTC(2019, 4, 27),
+                    x: Date.UTC(2018, 4, 28),
                     name: 'Memorial Day',
                     label: 'Memorial Day',
                 },{
-                    x: Date.UTC(2019, 5, 14),
+                    x: Date.UTC(2018, 5, 14),
                     name: 'Summer Break (UC)',
                     label: 'Summer Break (UC)',
                 },{
-                    x: Date.UTC(2019, 6, 4),
-                    name: 'Independence Day',
-                    label: 'Independence Day',
+                    x: Date.UTC(2018, 6, 4),
+                    name: '4th of July',
+                    label: '4th of July',
                 },{
-                    x: Date.UTC(2019, 8, 2),
+                    x: Date.UTC(2018, 8, 3),
                     name: 'Labor Day',
                     label: 'Labor Day',
                 },{
-                    x: Date.UTC(2019, 9, 31),
+                    x: Date.UTC(2018, 9, 31),
                     name: 'Halloween',
                     label: 'Halloween',
                 },{
-                    x: Date.UTC(2019, 10, 28),
+                    x: Date.UTC(2018, 10, 22),
                     name: 'Thanksgiving',
                     label: 'Thanksgiving',
                 },
                 {
-                    x: Date.UTC(2019, 11, 25),
+                    x: Date.UTC(2018, 11, 25),
                     name: 'Christmas',
                     label: 'Christmas',
                 },
                 {
-                    x: Date.UTC(2019, 11, 31),
+                    x: Date.UTC(2018, 11, 31),
                     name: 'New Years Eve',
                     label: 'New Years Eve',
                     dataLabels: {
