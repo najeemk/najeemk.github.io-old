@@ -34,7 +34,7 @@ body, html {
 
 /* Controls the black text bubble on screen */
 .bg-text {
-    background-color: rgb(0,0,0); background-color: rgba(0,0,0,0.7); 
+    background-color: rgb(0,0,0); background-color: rgba(0,0,0,0.75); 
     color: white;
     border: 2px solid #fff;
     font-weight: bold;
@@ -91,3 +91,6 @@ footer {
     }
 }
 
+.projects, .projects > a, .projects > p {
+    font-size: large;
+}
