@@ -17,13 +17,6 @@
         <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
-
-        <script src="https://www.google.com/recaptcha/api.js"></script>
-        <script>
-            function onSubmit(token) {
-              document.getElementById("email").innerHTML = "contact@najeemkanishka.com";
-            }
-          </script>
     </head>
     <body id="page-top">
         <!-- Navigation-->
@@ -51,6 +44,7 @@
                     </div>
                     <div class="col-lg-8 align-self-baseline">
                         <p class="text-white-75 font-weight-light mb-5">B.S. Data Science Student at UC San Diego</p>
+                        <noscript class="text-white"><h3>For best experience enable JavaScript<br /></h3></noscript>
                         <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">About</a>
                     </div>
                 </div>
@@ -200,17 +194,16 @@
                     <div class="col-lg-4 mr-auto text-center">
                         <i class="fas fa-envelope fa-3x mb-3 text-primary"></i>
                         <!-- Make sure to change the email address in BOTH the anchor text and the link target below!-->
-                        <div>Email:<br /><button id="email" class="btn g-recaptcha btn-primary btn-sm js-scroll-trigger" data-sitekey="6LdWc9IZAAAAAEV8W57iFkpe_rMY6L-cfWwq4maD" data-callback='onSubmit' 
-                            data-action='submit'>Verify reCAPTCHA</button></div>
+                        <a style="display: none;" href="mailto:this+is+a+trap+for+bots@notforhumans.example"></a>
+                        <div>Email:<br /><button disabled id="email" class="btn btn-primary btn-sm js-scroll-trigger" onclick="onOpenEmail();">View Email Address</button></div>
+                        <noscript>JavaScript disabled: Email is <br /> "contact &#64; najeemkanishka dot com"</noscript>
                     </div>
                 </div>
             </div>
         </section>
         <!-- Footer-->
         <footer class="bg-dark py-2">
-            <div class="container"><div class="small text-white-75 text-center">Copyright © 2020 - Najeem Kanishka. <br />This site is protected by reCAPTCHA and the Google
-                <a href="https://policies.google.com/privacy">Privacy Policy</a> and
-                <a href="https://policies.google.com/terms">Terms of Service</a> apply.</div></div>
+            <div class="container"><div class="small text-white-75 text-center">Copyright © 2020 - Najeem Kanishka.</div>
         </footer>
         <!-- Bootstrap core JS-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -220,5 +213,6 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+        <script src="js/email.js"></script>
     </body>
 </html>
