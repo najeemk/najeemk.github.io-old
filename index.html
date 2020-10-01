@@ -1,66 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
         <title>Najeem Kanishka</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="author" content="Najeem Kanishka">
-        <meta name="description" content="">
-        <link rel="stylesheet" type="text/css" href="/style.css">
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
+        <!-- Third party plugin CSS-->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
     </head>
-    <body>
-
-        <header>
-            <!--Navigation Bar-->
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                <a class="navbar-brand">Najeem Kanishka</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="/index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/about.html">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/projects">Projects</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/pictures.html">Pictures</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/contact.html">Contact</a>
-                        </li>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand js-scroll-trigger" href="#page-top">Najeem Kanishka</a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto my-2 my-lg-0">
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#services">Technical Skills</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#resume">Resume</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contact</a></li>
                     </ul>
                 </div>
-            </nav>
-        </header>
-
-        <main>
-            <div class="main container-full-bg text-white">
-                <div style="background-image: url(/img/index/background.jpg);" id="top-banner-jumbo" class="jumbotron jumbotron-fluid text-center"></div>
-                <div class="bg-text">
-                    <h1 class="display-3">Najeem Kanishka</h1>
-                    <hr class="small-hr">
-                    <h2>Data Science Undergraduate Student at UC San Diego</h2><br />
-                    <img id="profile-pic" src="img/index/profile.jpg" class="rounded-circle" alt="Najeem Kanishka's Profile Picture">
+            </div>
+        </nav>
+        <!-- Masthead-->
+        <header class="masthead">
+            <div class="container h-100">
+                <div class="row h-100 align-items-center justify-content-center text-center">
+                    <div class="col-lg-10 align-self-end">
+                        <h1 class="text-uppercase text-white font-weight-bold">Najeem Kanishka</h1>
+                        <hr class="divider my-4" />
+                    </div>
+                    <div class="col-lg-8 align-self-baseline">
+                        <p class="text-white-75 font-weight-light mb-5">B.S. Data Science Student at UC San Diego</p>
+                        <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">About</a>
+                    </div>
                 </div>
             </div>
-        </main>
+        </header>
+        <!-- About-->
+        <section class="page-section bg-primary" id="about">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="text-white mt-0">About Me</h2>
+                        <br />
+                        <img id="profile-pic" src="assets/img/profile.jpg" class="rounded-circle" alt="Najeem Kanishka's Profile Picture">
+                        <hr class="divider light my-4" />
+                        <p class="text-white-75 mb-4">I am a B.S. Data Science student graduating in Spring 2021 from UC San Diego. I am currently looking for full-time positions in Software Engineering and/or Data Science.</p>
+                        <p class="text-white-75 mb-4">I am currently working as a Website Developer at the Halicioglu Data Science Institute, and have been working there since Spring 2018. Previously, I have worked on front-end Native Android Development (using Java) for a small virtual assistant based startup.</p>
+                        <p class="text-white-75 mb-4">I have considerable experience in Python, specifically with Data Science libraries such as NumPy and Pandas. I also have worked with HTML/CSS/JavaScript, and am currently working with WordPress.</p>
+                        <a class="btn btn-light btn-xl js-scroll-trigger" href="#services">Technical Skills</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Services-->
+        <section class="page-section" id="services">
+            <div class="container">
+                <h2 class="text-center mt-0">Technical Skills</h2>
+                <hr class="divider my-4" />
+                <p class="text-center mb-4">These are just some of the skills I wanted to highlight. For a more comprehensive list of my technical skills, please see <a href="#resume">Resume</a>.</p>
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <i class="fab fa-4x fa-python text-primary mb-4"></i>
+                            <h3 class="h4 mb-2">Python</h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <i class="fas fa-4x fa-server text-primary mb-4"></i>
+                            <h3 class="h4 mb-2">Pandas</h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <i class="fas fa-4x fa-sitemap text-primary mb-4"></i>
+                            <h3 class="h4 mb-2">Scikit-Learn</h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <i class="fas fa-4x fa-database text-primary mb-4"></i>
+                            <h3 class="h4 mb-2">SQL (PostgreSQL)</h3>
 
-        <footer>
-            <div class="text-white">Copyright © 2020
-                <a href="https://najeemkanishka.com/"> Najeem Kanishka</a>
-              </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <i class="fab fa-4x fa-java text-primary mb-4"></i>
+                            <h3 class="h4 mb-2">Java</h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <i class="fab fa-4x fa-js text-primary mb-4"></i>
+                            <h3 class="h4 mb-2">JavaScript</h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <i class="fab fa-4x fa-html5 text-primary mb-4"></i>
+                            <h3 class="h4 mb-2">HTML/CSS</h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <i class="fab fa-4x fa-r-project text-primary mb-4"></i>
+                            <h3 class="h4 mb-2">R</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <i class="fab fa-4x fa-html5 text-primary mb-4"></i>
+                            <h3 class="h4 mb-2">HTML/CSS</h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <i class="fab fa-4x fa-wordpress text-primary mb-4"></i>
+                            <h3 class="h4 mb-2">WordPress</h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <i class="fab fa-4x fa-android text-primary mb-4"></i>
+                            <h3 class="h4 mb-2">Android SDK</h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <i class="fab fa-4x fa-docker text-primary mb-4"></i>
+                            <h3 class="h4 mb-2">Docker</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 text-center">
+                        <br />
+                        <a class="btn btn-primary btn-xl js-scroll-trigger" href="#resume">Resume</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Call to action-->
+        <div id="resume">
+            <section class="page-section bg-primary text-white">
+                <div class="container text-center">
+                    <h2 class="mb-4">View My Resume</h2>
+                    <a class="btn btn-light btn-xl" href="./resume_wo_phone.pdf">Open Resume</a>
+                </div>
+            </section>
+        </div>
+        <!-- Contact-->
+        <section class="page-section bg-dark text-white" id="contact">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="mt-0">Contact</h2>
+                        <hr class="divider my-4" />
+                        <p class="mb-5 text-white">Let's Get In Touch!</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 ml-auto text-center mb-5 mb-lg-0">
+                        <i class="fab fa-linkedin fa-3x mb-3 text-primary"></i>
+                        <div>LinkedIn:<br /> <a class="d-block text-white-75" href="https://www.linkedin.com/in/najeemkanishka/">najeemkanishka</a></div>
+                    </div>
+                    <div class="col-lg-4 ml-auto text-center mb-5 mb-lg-0">
+                        <i class="fab fa-github fa-3x mb-3 text-primary"></i>
+                        <div>Github:<br /> <a class="d-block text-white-75" href="https://github.com/najeemk">najeemk</a></div>
+                    </div>
+                    <div class="col-lg-4 mr-auto text-center">
+                        <i class="fas fa-envelope fa-3x mb-3 text-primary"></i>
+                        <!-- Make sure to change the email address in BOTH the anchor text and the link target below!-->
+                        <div>Email: <a class="d-block text-white-75" href="mailto:contact@najeemkanishka.com">contact@najeemkanishka.com</a></div> 
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Footer-->
+        <footer class="bg-dark py-2">
+            <div class="container"><div class="small text-white-75 text-center">Copyright © 2020 - Najeem Kanishka</div></div>
         </footer>
-
+        <!-- Bootstrap core JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+        <!-- Third party plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
     </body>
 </html>
