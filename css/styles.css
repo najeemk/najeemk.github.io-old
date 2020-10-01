@@ -10174,3 +10174,6 @@ header.masthead h1 {
   max-width: 100%;
   border: 3px solid var(--btn-hover-border-color);
 }
+
+/* reCaptcha */
+.grecaptcha-badge { visibility: hidden; }
