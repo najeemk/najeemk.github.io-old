@@ -21,7 +21,7 @@
         <script src="https://www.google.com/recaptcha/api.js"></script>
         <script>
             function onSubmit(token) {
-              alert("contact@najeemkanishka.com");
+              document.getElementById("email").innerHTML = "contact@najeemkanishka.com";
             }
           </script>
     </head>
@@ -200,8 +200,8 @@
                     <div class="col-lg-4 mr-auto text-center">
                         <i class="fas fa-envelope fa-3x mb-3 text-primary"></i>
                         <!-- Make sure to change the email address in BOTH the anchor text and the link target below!-->
-                        <div>Email:<br /><button class="btn g-recaptcha btn-primary btn-sm js-scroll-trigger" data-sitekey="6LdWc9IZAAAAAEV8W57iFkpe_rMY6L-cfWwq4maD" data-callback='onSubmit' 
-                            data-action='submit'>najeemk</button></div>
+                        <div>Email:<br /><button id="email" class="btn g-recaptcha btn-primary btn-sm js-scroll-trigger" data-sitekey="6LdWc9IZAAAAAEV8W57iFkpe_rMY6L-cfWwq4maD" data-callback='onSubmit' 
+                            data-action='submit'>Verify reCAPTCHA</button></div>
                     </div>
                 </div>
             </div>
