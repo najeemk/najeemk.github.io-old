@@ -3,9 +3,9 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Najeem Kanishka</title>
+        <meta name="description" content="Najeem Kanishka's Personal Website" />
+        <meta name="author" content="Najeem Kanishka" />
+        <title>Najeem Kanishka's Website</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
@@ -17,6 +17,13 @@
         <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+
+        <script src="https://www.google.com/recaptcha/api.js"></script>
+        <script>
+            function onSubmit(token) {
+              alert("success");
+            }
+          </script>
     </head>
     <body id="page-top">
         <!-- Navigation-->
@@ -194,6 +201,10 @@
                         <i class="fas fa-envelope fa-3x mb-3 text-primary"></i>
                         <!-- Make sure to change the email address in BOTH the anchor text and the link target below!-->
                         <div>Email: <a class="d-block text-white-75" href="mailto:contact@najeemkanishka.com">contact@najeemkanishka.com</a></div> 
+                        <button class="g-recaptcha" 
+        data-sitekey="6LdWc9IZAAAAAEV8W57iFkpe_rMY6L-cfWwq4maD" 
+        data-callback='onSubmit' 
+        data-action='submit'>Submit</button>
                     </div>
                 </div>
             </div>
